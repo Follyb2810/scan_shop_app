@@ -11,18 +11,18 @@ export default function CategoryList({
       showsHorizontalScrollIndicator={false}
       className="px-4 py-4"
     >
-      {categories.map((cat: string) => (
+      {categories.map((cat: string, index: number) => (
         <TouchableOpacity
-          key={cat}
+          key={`${cat}+${index}`}
           onPress={() => setActiveCategory(cat)}
           className={`mr-3 px-5 py-2.5 rounded-full ${
             activeCategory === cat
-              ? "bg-emerald-600"
-              : "bg-white border border-gray-200"
+              ? "bg-success"
+              : "bg-card border border-textPrimary"
           }`}
         >
           <Text
-            className={`font-semibold ${activeCategory === cat ? "text-white" : "text-gray-700"}`}
+            className={`font-semibold ${activeCategory === cat ? "text-card" : "text-textPrimary"}`}
           >
             {cat}
           </Text>

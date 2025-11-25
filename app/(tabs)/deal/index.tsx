@@ -17,6 +17,12 @@ const DealsScreen = () => {
     "Food",
     "Beauty",
     "Home",
+    "Home",
+    "Home",
+    "Home",
+    "Home",
+    "Home",
+    "Home",
   ];
 
   const featuredDeals = [
