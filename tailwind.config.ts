@@ -28,7 +28,10 @@ module.exports = {
         card: "#FFFFFF",
         textPrimary: "#111827",
         textSecondary: "#6B7280",
-        fadeText: "9ca3af",
+        fadeText: "#9ca3af",
+        bg_100: "#ec4899",
+        success_100: "#10b981",
+        success_200: "#3b82f6",
       },
       fontSize: {
         xs: "0.75rem", // 12px

@@ -1,23 +1,19 @@
 import React, { useState } from "react";
-import {
-  ScrollView,
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 import SearchHeader from "../../../components/Search/SearchHeader";
 import FilterBar from "../../../components/Search/FilterBar";
 import RecentSearchItem from "../../../components/Search/RecentSearchItem";
 import CategoryCard from "../../../components/Search/CategoryCard";
 import ProductCard from "../../../components/Search/ProductCard";
 import VerificationInfo from "../../../components/Search/VerificationInfo";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = ["All", "Verified", "New", "Popular", "On Sale"];
+
   const recentSearches = [
     "Organic Honey",
     "Pure Olive Oil",
@@ -25,10 +21,10 @@ const SearchScreen = () => {
     "Natural Skincare",
   ];
   const categories = [
-    { id: 1, name: "Food", color: "#f59e0b" },
-    { id: 2, name: "Beauty", color: "#ec4899" },
-    { id: 3, name: "Health", color: "#10b981" },
     { id: 4, name: "Home", color: "#3b82f6" },
+    { id: 3, name: "Health", color: "#8b5cf6" },
+    { id: 2, name: "Beauty", color: "#ec4899" },
+    { id: 1, name: "Food", color: "#f59e0b" },
   ];
   const trendingProducts = [
     {
@@ -85,7 +81,6 @@ const SearchScreen = () => {
           setActiveFilter={setActiveFilter}
         />
 
-        {/* Recent Searches */}
         {searchQuery.length === 0 && (
           <View className="px-4 mt-4">
             <View className="flex-row justify-between items-center mb-3">
@@ -104,7 +99,6 @@ const SearchScreen = () => {
           </View>
         )}
 
-        {/* Categories */}
         {searchQuery.length === 0 && (
           <View className="px-4 mt-6">
             <Text className="text-gray-800 font-bold text-lg mb-3">
@@ -118,7 +112,6 @@ const SearchScreen = () => {
           </View>
         )}
 
-        {/* Trending Products */}
         <View className="px-4 mt-6 mb-6">
           <View className="flex-row justify-between items-center mb-3">
             <Text className="text-gray-800 font-bold text-lg">

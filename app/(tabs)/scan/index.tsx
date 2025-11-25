@@ -39,13 +39,13 @@ const ScanScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-background">
       <ScrollView>
         <ScanHeader />
         <ScannerArea />
 
         <View className="px-4 mt-6">
-          <Text className="text-gray-800 font-bold text-lg mb-3">
+          <Text className="text-textSecondary font-bold text-lg mb-3">
             Quick Verification
           </Text>
           <View className="flex-row flex-wrap justify-between">
@@ -56,7 +56,7 @@ const ScanScreen = () => {
         </View>
 
         <View className="px-4 mt-6 mb-6">
-          <Text className="text-gray-800 font-bold text-lg mb-3">
+          <Text className="text-textSecondary font-bold text-lg mb-3">
             Recent Scans
           </Text>
           {recentScans.map((scan) => (

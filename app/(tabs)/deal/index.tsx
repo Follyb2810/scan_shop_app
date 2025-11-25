@@ -17,12 +17,7 @@ const DealsScreen = () => {
     "Food",
     "Beauty",
     "Home",
-    "Home",
-    "Home",
-    "Home",
-    "Home",
-    "Home",
-    "Home",
+    "Medicine",
   ];
 
   const featuredDeals = [
@@ -34,7 +29,7 @@ const DealsScreen = () => {
       originalPrice: "₦3,500",
       discount: "28%",
       image:
-        "https://images.unsplash.com/photo-1587049352846-4a222e784354?w=400",
+        "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=400",
       verified: true,
       rating: 4.8,
       timeLeft: "2h 15m",

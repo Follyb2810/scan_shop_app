@@ -91,13 +91,13 @@ const StoreScreen = () => {
   const renderCategory = ({ item }) => (
     <TouchableOpacity
       key={item.id}
-      className="bg-white rounded-2xl p-4 mr-3 items-center"
+      className="bg-card rounded-2xl p-4 mr-3 items-center"
       style={{ width: 100 }}
     >
       <View className="w-14 h-14 bg-emerald-100 rounded-full items-center justify-center mb-2">
-        <Ionicons name={"add"} size={28} color="#059669" />
+        <Ionicons name={"add"} size={28} color="#16A34A" />
       </View>
-      <Text className="text-gray-800 font-semibold text-xs text-center">
+      <Text className="text-fadeText font-semibold text-xs text-center">
         {item.name}
       </Text>
       <Text className="text-gray-500 text-xs mt-1">{item.count} stores</Text>
@@ -116,12 +116,12 @@ const StoreScreen = () => {
         resizeMode="cover"
       />
       <View className="absolute inset-0 bg-black/40" />
-      <View className="absolute top-3 right-3 bg-red-500 px-3 py-1.5 rounded-full">
-        <Text className="text-white text-xs font-bold">{item.offer}</Text>
+      <View className="absolute top-3 right-3 bg-danger px-3 py-1.5 rounded-full">
+        <Text className="text-card text-xs font-bold">{item.offer}</Text>
       </View>
       <View className="absolute bottom-0 left-0 right-0 p-4">
-        <Text className="text-white font-bold text-lg">{item.name}</Text>
-        <Text className="text-white/90 text-sm">{item.type}</Text>
+        <Text className="text-card font-bold text-lg">{item.name}</Text>
+        <Text className="text-card/90 text-sm">{item.type}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -129,7 +129,7 @@ const StoreScreen = () => {
   const renderStore = ({ item }) => (
     <TouchableOpacity
       key={item.id}
-      className="bg-white rounded-2xl mb-3 overflow-hidden"
+      className="bg-card rounded-2xl mb-3 overflow-hidden"
     >
       <View className="flex-row">
         <Image
@@ -142,7 +142,7 @@ const StoreScreen = () => {
             <View className="flex-row items-center justify-between mb-1">
               <View className="flex-row items-center">
                 <Text
-                  className="text-gray-800 font-bold text-base"
+                  className="text-fadeText font-bold text-base"
                   numberOfLines={1}
                 >
                   {item.name}
@@ -162,7 +162,7 @@ const StoreScreen = () => {
             <View className="flex-row items-center mt-2">
               <View className="flex-row items-center mr-3">
                 <Ionicons name="star" size={14} color="#fbbf24" />
-                <Text className="text-gray-600 text-xs ml-1">
+                <Text className="text-fadeText text-xs ml-1">
                   {item.rating}
                 </Text>
                 <Text className="text-gray-400 text-xs ml-1">
@@ -182,7 +182,7 @@ const StoreScreen = () => {
               className={`px-2 py-1 rounded-full ${item.isOpen ? "bg-emerald-100" : "bg-gray-100"}`}
             >
               <Text
-                className={`text-xs font-semibold ${item.isOpen ? "text-emerald-600" : "text-gray-500"}`}
+                className={`text-xs font-semibold ${item.isOpen ? "text-success" : "text-gray-500"}`}
               >
                 {item.isOpen ? "Open Now" : "Closed"}
               </Text>
@@ -197,7 +197,7 @@ const StoreScreen = () => {
         <View className="bg-gradient-to-r from-emerald-50 to-blue-50 px-3 py-2 border-t border-emerald-100">
           <View className="flex-row items-center justify-between">
             <View className="flex-row items-center">
-              <Ionicons name="shield-checkmark" size={14} color="#059669" />
+              <Ionicons name="shield-checkmark" size={14} color="#16A34A" />
               <Text className="text-emerald-700 text-xs font-semibold ml-1">
                 {item.badge}
               </Text>
@@ -221,25 +221,25 @@ const StoreScreen = () => {
             <View className="px-4 pt-4 pb-2">
               <View className="flex-row justify-between items-center mb-4">
                 <View>
-                  <Text className="text-gray-800 text-2xl font-bold">
+                  <Text className="text-secondary text-2xl font-bold">
                     Verified Stores
                   </Text>
-                  <Text className="text-gray-500 text-sm mt-1">
+                  <Text className="text-primary text-sm mt-1">
                     Trusted sellers near you
                   </Text>
                 </View>
                 <TouchableOpacity className="bg-emerald-100 p-3 rounded-full">
-                  <Ionicons name="location" size={22} color="#059669" />
+                  <Ionicons name="location" size={22} color="#16A34A" />
                 </TouchableOpacity>
               </View>
-              <View className="flex-row items-center bg-white rounded-2xl px-4 py-3 shadow-sm">
+              <View className="flex-row items-center bg-card rounded-2xl px-4 py-3 shadow-sm">
                 <Ionicons name="search" size={20} color="#6b7280" />
                 <TextInput
                   placeholder="Search stores or products..."
                   placeholderTextColor="#9ca3af"
-                  className="flex-1 ml-3 text-gray-800"
+                  className="flex-1 ml-3 text-fadeText"
                 />
-                <TouchableOpacity className="bg-emerald-600 p-2 rounded-lg">
+                <TouchableOpacity className="bg-success p-2 rounded-lg">
                   <Ionicons name="options" size={18} color="#fff" />
                 </TouchableOpacity>
               </View>
@@ -251,10 +251,10 @@ const StoreScreen = () => {
                 <TouchableOpacity
                   key={tab}
                   onPress={() => setActiveTab(tab)}
-                  className={`flex-1 py-3 rounded-xl mr-2 ${activeTab === tab ? "bg-emerald-600" : "bg-white"}`}
+                  className={`flex-1 py-3 rounded-xl mr-2 ${activeTab === tab ? "bg-success" : "bg-card"}`}
                 >
                   <Text
-                    className={`text-center font-bold capitalize ${activeTab === tab ? "text-white" : "text-gray-600"}`}
+                    className={`text-center font-bold capitalize ${activeTab === tab ? "text-card" : "text-fadeText"}`}
                   >
                     {tab}
                   </Text>
@@ -264,7 +264,7 @@ const StoreScreen = () => {
 
             {/* Categories */}
             <View className="px-4 mt-4">
-              <Text className="text-gray-800 font-bold text-lg mb-3">
+              <Text className="text-fadeText font-bold text-lg mb-3">
                 Shop by Category
               </Text>
               <FlatList
@@ -278,7 +278,7 @@ const StoreScreen = () => {
 
             {/* Featured Stores */}
             <View className="px-4 mt-6">
-              <Text className="text-gray-800 font-bold text-lg mb-3">
+              <Text className="text-fadeText font-bold text-lg mb-3">
                 Featured This Week
               </Text>
               <FlatList
@@ -291,16 +291,16 @@ const StoreScreen = () => {
             </View>
 
             {/* Verification Banner */}
-            <View className="mx-4 mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 p-5 rounded-2xl">
+            <View className="mx-4 mb-6 bg-gradient-to-r from-success to-teal-600 p-5 rounded-2xl">
               <View className="flex-row items-center">
-                <View className="bg-white/20 p-3 rounded-full">
+                <View className="bg-card/20 p-3 rounded-full">
                   <Ionicons name="shield-checkmark" size={28} color="#fff" />
                 </View>
                 <View className="flex-1 ml-4">
-                  <Text className="text-white font-bold text-base">
+                  <Text className="text-card font-bold text-base">
                     All Stores Verified
                   </Text>
-                  <Text className="text-white/90 text-xs mt-1">
+                  <Text className="text-card/90 text-xs mt-1">
                     Every store is certified to sell only authentic,
                     non-adulterated products
                   </Text>
