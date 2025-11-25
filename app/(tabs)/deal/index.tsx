@@ -6,6 +6,7 @@ import CategoryList from "../../../components/Deal/CategoryList";
 import FeaturedDealCard from "../../../components/Deal/FeaturedDealCard";
 import TrustBadge from "../../../components/Deal/TrustBadge";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SafeAreaWrapper from "../../../components/Shared/SafeAreaWrapper";
 
 const DealsScreen = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -71,7 +72,7 @@ const DealsScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaWrapper>
       <ScrollView>
         <Header />
         <CategoryList
@@ -95,7 +96,7 @@ const DealsScreen = () => {
         </ScrollView>
         <TrustBadge />
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaWrapper>
   );
 };
 

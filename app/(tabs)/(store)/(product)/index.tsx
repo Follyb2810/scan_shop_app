@@ -11,6 +11,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
+import SafeAreaWrapper from "../../../../components/Shared/SafeAreaWrapper";
 
 const { width } = Dimensions.get("window");
 
@@ -80,9 +81,8 @@ const ProductDetailScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaWrapper>
       <ScrollView>
-        {/* Image Carousel */}
         <View className="relative">
           <ScrollView
             horizontal
@@ -104,7 +104,6 @@ const ProductDetailScreen = () => {
             ))}
           </ScrollView>
 
-          {/* Image Indicators */}
           <View className="absolute bottom-4 left-0 right-0 flex-row justify-center">
             {product.images.map((_, index) => (
               <View
@@ -116,7 +115,6 @@ const ProductDetailScreen = () => {
             ))}
           </View>
 
-          {/* Top Actions */}
           <View className="absolute top-4 left-0 right-0 flex-row justify-between px-4">
             <TouchableOpacity
               onPress={() => navigation.goBack()}
@@ -136,16 +134,13 @@ const ProductDetailScreen = () => {
             </TouchableOpacity>
           </View>
 
-          {/* Verification Badge */}
           <View className="absolute top-4 left-1/2 -ml-16 bg-emerald-600 px-4 py-2 rounded-full flex-row items-center">
             <Ionicons name="shield-checkmark" size={16} color="#fff" />
             <Text className="text-white font-bold ml-1 text-sm">Verified</Text>
           </View>
         </View>
 
-        {/* Product Info */}
         <View className="px-4 py-4">
-          {/* Brand and Stock */}
           <View className="flex-row justify-between items-center mb-2">
             <Text className="text-emerald-600 font-semibold">
               {product.brand}
@@ -165,12 +160,10 @@ const ProductDetailScreen = () => {
             </View>
           </View>
 
-          {/* Product Name */}
           <Text className="text-gray-800 text-2xl font-bold mb-2">
             {product.name}
           </Text>
 
-          {/* Rating */}
           <View className="flex-row items-center mb-4">
             <View className="flex-row items-center">
               <Ionicons name="star" size={18} color="#fbbf24" />
@@ -183,7 +176,6 @@ const ProductDetailScreen = () => {
             </View>
           </View>
 
-          {/* Price */}
           <View className="flex-row items-end mb-4">
             <Text className="text-emerald-600 text-3xl font-bold">
               {product.price}
@@ -198,7 +190,6 @@ const ProductDetailScreen = () => {
             </View>
           </View>
 
-          {/* Size Selection */}
           <View className="mb-4">
             <Text className="text-gray-800 font-bold mb-2">Select Size</Text>
             <View className="flex-row">
@@ -224,7 +215,6 @@ const ProductDetailScreen = () => {
             </View>
           </View>
 
-          {/* Description */}
           <View className="mb-4">
             <Text className="text-gray-800 font-bold text-lg mb-2">
               Description
@@ -234,7 +224,6 @@ const ProductDetailScreen = () => {
             </Text>
           </View>
 
-          {/* Features */}
           <View className="mb-4">
             <Text className="text-gray-800 font-bold text-lg mb-2">
               Key Features
@@ -355,7 +344,7 @@ const ProductDetailScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeAreaWrapper>
   );
 };
 

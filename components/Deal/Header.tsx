@@ -1,9 +1,11 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 export default function Header() {
+  const { push, navigate, back } = useRouter();
   return (
-    <View className="bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 pt-6 pb-8 px-4 rounded-b-3xl">
+    <View className="bg-gradient-to-r from-emerald-500 via-emeraldr-600 to-emerald-700 pt-6 pb-8 px-4 rounded-b-3xl">
       <View className="flex-row justify-between items-center mb-4">
         <View>
           <Text className="text-secondary text-2xl font-extrabold tracking-tight">
@@ -13,9 +15,12 @@ export default function Header() {
             100% Authentic Products
           </Text>
         </View>
-        <View className="bg-background p-3 rounded-full shadow">
-          <Ionicons name="shield-checkmark" size={24} color="#1E40AF" />
-        </View>
+        <Pressable
+          className="bg-background p-3 rounded-full shadow"
+          onPress={() => push("/profile/123")}
+        >
+          <Ionicons name="person" size={24} color="#1E40AF" />
+        </Pressable>
       </View>
 
       <View className="flex-row items-center bg-card rounded-3xl px-4 py-3 shadow">

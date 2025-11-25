@@ -7,6 +7,7 @@ import CategoryCard from "../../../components/Search/CategoryCard";
 import ProductCard from "../../../components/Search/ProductCard";
 import VerificationInfo from "../../../components/Search/VerificationInfo";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SafeAreaWrapper from "../../../components/Shared/SafeAreaWrapper";
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,7 +70,7 @@ const SearchScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaWrapper>
       <ScrollView>
         <SearchHeader
           searchQuery={searchQuery}
@@ -130,7 +131,7 @@ const SearchScreen = () => {
 
         <VerificationInfo />
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaWrapper>
   );
 };
 

@@ -5,6 +5,7 @@ import QuickActionCard from "../../../components/Scan/QuickActionCard";
 import RecentScanItem from "../../../components/Scan/RecentScanItem";
 import InfoBanner from "../../../components/Scan/InfoBanner";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SafeAreaWrapper from "../../../components/Shared/SafeAreaWrapper";
 
 const ScanScreen = () => {
   const quickActions = [
@@ -39,7 +40,7 @@ const ScanScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-background">
+    <SafeAreaWrapper>
       <ScrollView>
         <ScanHeader />
         <ScannerArea />
@@ -70,7 +71,7 @@ const ScanScreen = () => {
           iconColor="purple"
         />
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaWrapper>
   );
 };
 
