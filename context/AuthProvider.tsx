@@ -1,18 +1,44 @@
-import { View, Text } from "react-native";
-import React, { useEffect } from "react";
+// context/AuthProvider.tsx
+import { View, ActivityIndicator } from "react-native";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AuthProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { push, replace } = useRouter();
-  const isLoggin = false;
+  const { replace } = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
-    if (!isLoggin) {
-      replace("/auth");
+    const checkAuth = async () => {
+      const token = await AsyncStorage.getItem("accessToken");
+      setIsLoggedIn(!!token);
+      setIsLoading(false);
+    };
+    checkAuth();
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (!isLoggedIn) {
+        replace("/auth");
+      } else {
+        replace("/(tabs)");
+      }
     }
-  });
-  return <View>{children}</View>;
+  }, [isLoading, isLoggedIn]);
+
+  if (isLoading) {
+    return (
+      <View className="flex-1 justify-center items-center">
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  return <>{children}</>;
 }
