@@ -17,7 +17,7 @@ const SafeAreaWrapper = ({
 }: SafeAreaWrapperProps) => {
   return (
     <SafeAreaView
-      className={`${className} flex-1 bg-gray-50 p-2`}
+      className={`${className} flex-1 bg-gray-50 p-1`}
       style={[{ flex: 1, backgroundColor }, style]}
     >
       {children}

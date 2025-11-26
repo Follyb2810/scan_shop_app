@@ -1,7 +1,6 @@
 import { Stack } from "expo-router";
-import { UserDummy } from "./[id]";
 
-export default function ProfileLayout() {
+export default function ManufacturerLayout() {
   return (
     <Stack
       screenOptions={{
@@ -13,19 +12,17 @@ export default function ProfileLayout() {
         headerTitleStyle: {
           fontWeight: "bold",
         },
-        headerTitle: UserDummy.firstName || "User Profile",
       }}
     >
       <Stack.Screen
         name="index"
         options={{
-          headerBackVisible: false,
+          headerBackVisible: true,
           headerBackButtonDisplayMode: "generic",
-          headerShown: false,
+          headerShown: true,
+          headerBackTitle: "Go Back",
         }}
       />
-      <Stack.Screen name="(profile)" options={{ headerShown: false }} />
-      <Stack.Screen name="apply" />
     </Stack>
   );
 }

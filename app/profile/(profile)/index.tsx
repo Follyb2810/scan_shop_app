@@ -1,0 +1,5 @@
+import { Redirect } from "expo-router";
+
+export default function TabsIndex() {
+  return <Redirect href="/profile/manufacrure_products" />;
+}
