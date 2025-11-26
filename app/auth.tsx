@@ -22,19 +22,13 @@ export default function Auth() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      // For now, mock API response
-      // Replace this with your fetch/axios request
       if (!email || !password) {
         Alert.alert("Error", "Email and password are required");
         setLoading(false);
         return;
       }
-
-      // Simulate API call
       const mockToken = "dummy_access_token";
       await AsyncStorage.setItem("accessToken", mockToken);
-
-      // Redirect to tabs after login/signup
       router.replace("/(tabs)");
     } catch (error) {
       Alert.alert("Error", "Something went wrong");

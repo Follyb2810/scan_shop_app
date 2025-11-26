@@ -5,7 +5,6 @@ import Header from "../../../components/Deal/Header";
 import CategoryList from "../../../components/Deal/CategoryList";
 import FeaturedDealCard from "../../../components/Deal/FeaturedDealCard";
 import TrustBadge from "../../../components/Deal/TrustBadge";
-import { SafeAreaView } from "react-native-safe-area-context";
 import SafeAreaWrapper from "../../../components/Shared/SafeAreaWrapper";
 
 const DealsScreen = () => {

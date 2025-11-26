@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, FlatList } from "react-native";
 import StoreHeader from "../../../components/StoreScreen/StoreHeader";
 import StoreTab from "../../../components/StoreScreen/StoreTab";
 import CategoryCard from "../../../components/StoreScreen/CategoryCard";
 import FeaturedStoreCard from "../../../components/StoreScreen/FeaturedStoreCard";
 import StoreCard from "../../../components/StoreScreen/StoreCard";
-import { SafeAreaView } from "react-native-safe-area-context";
 import VerificationBanner from "../../../components/StoreScreen/VerificationBanner";
 import SafeAreaWrapper from "../../../components/Shared/SafeAreaWrapper";
 
@@ -140,7 +139,6 @@ const StoreScreen = () => {
               />
             </View>
 
-            {/* All Stores title */}
             <View className="px-4 mt-6 mb-3">
               <Text className="text-gray-800 font-bold text-lg">
                 All Stores
